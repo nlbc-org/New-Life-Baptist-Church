@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="New Life Baptist Church, Seabreeze Homes, Mactan, Lapu-Lapu City, Cebu. Where New Life Begins in Christ.">
+    <meta name="theme-color" content="#2b7a78">
+
+    <title>New Life Baptist Church</title>
+
+    <style>
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        :root {
+            --cream: #f8f3e8;
+            --cream-dark: #eee5d4;
+            --teal: #2b7a78;
+            --green: #6dd5b8;
+            --dark: #173b3a;
+            --white: #ffffff;
+            --text: #304b49;
+            --shadow: 0 8px 25px rgba(43, 122, 120, 0.12);
+
+            --header-h: 78px;
+            --section-x: clamp(18px, 6vw, 8%);
+            --section-y: clamp(60px, 9vw, 100px);
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        section {
+            padding: var(--section-y) var(--section-x);
+            scroll-margin-top: var(--header-h);
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--green);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* Section titles */
+
+        .section-title {
+            max-width: 800px;
+            margin: 0 auto clamp(35px, 6vw, 60px);
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--teal);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 {
+            margin-bottom: 14px;
+            color: var(--teal);
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #607572;
+            font-size: clamp(15px, 2vw, 18px);
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(253, 252, 251, 0.96);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar {
+            position: relative;
+            width: 100%;
+            min-height: var(--header-h);
+            padding: 0 var(--section-x);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .logo-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--teal);
+            color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            min-width: 0;
+        }
+
+        .logo-text h1 {
+            color: var(--teal);
+            font-size: clamp(16px, 2.2vw, 22px);
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            display: block;
+            color: #64817d;
+            font-size: clamp(11px, 1.4vw, 13px);
+            line-height: 1.3;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: clamp(16px, 2.2vw, 28px);
+        }
+
+        .nav-links a {
+            font-size: 17px;
+            font-weight: bold;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: -5px;
+            background: var(--green);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            display: none;
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer;
+            color: var(--teal);
+            background: transparent;
+            border: 0;
+            border-radius: 8px;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: calc(100vh - var(--header-h));
+            min-height: calc(100dvh - var(--header-h));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background:
+                linear-gradient(90deg,
+                    rgba(248, 243, 232, 0.98) 5%,
+                    rgba(248, 243, 232, 0.75)),
+                url("church.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            animation: fadeUp 1s ease;
+        }
+
+        .hero-content .small-title {
+            color: var(--teal);
+            font-size: clamp(14px, 2vw, 19px);
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h2 {
+            font-size: clamp(38px, 7vw, 75px);
+            line-height: 1.05;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 span {
+            color: var(--teal);
+        }
+
+        .hero-content p {
+            font-size: clamp(17px, 2.2vw, 20px);
+            color: #526866;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid var(--teal);
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark);
+            border-color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            color: var(--teal);
+        }
+
+        .btn-outline:hover {
+            background: var(--teal);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           ABOUT / MISSION & VISION
+        ========================================================= */
+
+        .about {
+            background: var(--white);
+        }
+
+        .mission-vision {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .mv-card {
+            position: relative;
+            padding: clamp(26px, 4vw, 45px);
+            background: var(--cream);
+            border-radius: 22px;
+            border: 1px solid rgba(43, 122, 120, 0.08);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .mv-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--teal);
+        }
+
+        .mv-card::after {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            right: -100px;
+            bottom: -120px;
+            border-radius: 50%;
+            background: rgba(43, 122, 120, 0.06);
+            pointer-events: none;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .mv-card.mission-card {
+            background: #f4f7f5;
+        }
+
+        .mv-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .mv-content h3 {
+            color: var(--teal);
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .mv-line {
+            width: 55px;
+            height: 3px;
+            margin: 18px 0;
+            background: var(--teal);
+            border-radius: 10px;
+        }
+
+        .mv-content p {
+            max-width: 500px;
+            color: #555;
+            font-size: clamp(15px, 1.8vw, 16px);
+            line-height: 1.85;
+        }
+
+
+        /* =========================================================
+           SCHEDULE
+        ========================================================= */
+
+        .schedule {
+            background: var(--dark);
+            color: white;
+        }
+
+        .schedule .section-title h2 {
+            color: var(--green);
+        }
+
+        .schedule .section-title p {
+            color: #d4e5e1;
+        }
+
+        .schedule-grid {
+            max-width: 800px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .schedule-card {
+            padding: clamp(26px, 4vw, 35px) 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 15px;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .schedule-card:hover {
+            background: rgba(109, 213, 184, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .schedule-card .day {
+            color: var(--green);
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .schedule-card h3 {
+            font-size: clamp(21px, 3vw, 24px);
+            margin: 10px 0;
+        }
+
+        .schedule-card p {
+            color: #dceae7;
+            font-size: 17px;
+        }
+
+
+        /* =========================================================
+           MINISTRIES
+        ========================================================= */
+
+        .ministries {
+            background: var(--cream);
+        }
+
+        .ministry-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(22px, 4vw, 35px);
+        }
+
+        .ministry-card {
+            width: 100%;
+            background: white;
+            border-radius: 22px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .ministry-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(43, 122, 120, 0.18);
+        }
+
+        .ministry-photos {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 5px;
+        }
+
+        .ministry-photos img {
+            width: 100%;
+            height: clamp(150px, 22vw, 250px);
+            object-fit: cover;
+            border-radius: 14px;
+            background: var(--cream-dark);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .ministry-photos img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(43, 122, 120, 0.25);
+        }
+
+        .ministry-content {
+            text-align: center;
+            padding: 15px 25px 20px;
+        }
+
+        .ministry-content h3 {
+            color: var(--teal);
+            font-size: clamp(22px, 3vw, 26px);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .ministry-content p {
+            max-width: 750px;
+            margin: auto;
+            color: #687572;
+            font-size: clamp(15px, 1.8vw, 16px);
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact {
+            background: var(--cream-dark);
+        }
+
+        /* 3 cards on desktop */
+        .contact-grid {
+            max-width: 1100px;
+            margin: 0 auto 45px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            min-width: 0;
+            text-align: center;
+            background: white;
+            padding: 38px 25px;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(43, 122, 120, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+        }
+
+        .contact-card .icon {
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            font-weight: bold;
+            color: var(--teal);
+            border: 1.5px solid rgba(43, 122, 120, 0.25);
+            border-radius: 50%;
+            transition: 0.3s ease;
+        }
+
+        .contact-card:hover .icon {
+            background: var(--teal);
+            color: white;
+            border-color: var(--teal);
+        }
+
+        .contact-card h3 {
+            color: var(--teal);
+            margin-bottom: 12px;
+            font-size: clamp(20px, 2.5vw, 23px);
+        }
+
+        .contact-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .map-link,
+        .email-link,
+        .facebook-link {
+            display: inline-block;
+            max-width: 100%;
+            color: var(--teal);
+            font-weight: 600;
+            transition: 0.3s ease;
+            overflow-wrap: anywhere;
+        }
+
+        .map-link:hover,
+        .email-link:hover,
+        .facebook-link:hover {
+            color: var(--dark);
+            transform: translateX(3px);
+        }
+
+        /* Map */
+
+        .map-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-header {
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .map-location-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-width: 0;
+        }
+
+        .map-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            color: var(--teal);
+            border: 1.5px solid rgba(43, 122, 120, 0.25);
+            border-radius: 50%;
+        }
+
+        .map-header h3 {
+            margin: 0 0 4px;
+            color: var(--teal);
+            font-size: 21px;
+        }
+
+        .map-header p {
+            margin: 0;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .directions-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 20px;
+            background: var(--teal);
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: 0.3s ease;
+        }
+
+        .directions-btn:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        .map-wrapper {
+            width: 100%;
+            height: clamp(260px, 40vw, 420px);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #102f2e;
+            color: white;
+            text-align: center;
+            padding: 45px var(--section-x);
+        }
+
+        footer h2 {
+            color: var(--green);
+            margin-bottom: 10px;
+            font-size: clamp(22px, 4vw, 28px);
+        }
+
+        footer p {
+            color: #c6d8d5;
+        }
+
+        .footer-line {
+            width: 80px;
+            height: 2px;
+            background: var(--green);
+            margin: 20px auto;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           ANIMATIONS
+        ========================================================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.4s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.active:hover {
+            transform: translateY(-6px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+        }
+
+
+        /* =========================================================
+           RESPONSIVE BREAKPOINTS
+           1400+ large desktop | 1100 laptop | 1000 contact 2-col
+           960 hamburger | 768 tablet portrait | 600 phone
+           480 small phone | 360 very small phone
+        ========================================================= */
+
+        /* ---------- Large desktops (1400px+) ---------- */
+        @media (min-width: 1400px) {
+            .navbar,
+            .hero {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+        }
+
+        /* ---------- Laptops (≤1100px) ---------- */
+        @media (max-width: 1100px) {
+            .nav-links a {
+                font-size: 16px;
+            }
+
+            .contact-card {
+                padding: 34px 20px;
+            }
+        }
+
+        /* ---------- Tablets: contact becomes 2 columns,
+                      third card centered underneath (≤1000px) ---------- */
+        @media (max-width: 1000px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 760px;
+            }
+
+            .contact-grid .contact-card:last-child {
+                grid-column: 1 / -1;
+                width: 100%;
+                max-width: 372px;
+                justify-self: center;
+            }
+        }
+
+        /* ---------- Hamburger menu (≤960px) ---------- */
+        @media (max-width: 960px) {
+
+            .menu-btn {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                visibility: hidden;
+                background: var(--cream);
+                flex-direction: column;
+                text-align: center;
+                gap: 0;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+                transition: max-height 0.4s ease, visibility 0.4s;
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+                visibility: visible;
+            }
+
+            .nav-links li {
+                border-top: 1px solid rgba(43, 122, 120, 0.1);
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 16px;
+                font-size: 18px;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .hero {
+                min-height: 75vh;
+                min-height: 75dvh;
+                text-align: center;
+                justify-content: center;
+                background:
+                    linear-gradient(rgba(248, 243, 232, 0.92),
+                        rgba(248, 243, 232, 0.92)),
+                    url("church.png");
+                background-size: cover;
+                background-position: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .mission-vision {
+                gap: 20px;
+            }
+        }
+
+        /* ---------- Tablet portrait / large phones (≤768px) ---------- */
+        @media (max-width: 768px) {
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+                max-width: 560px;
+            }
+
+            .mv-card:hover,
+            .ministry-card:hover,
+            .contact-card:hover,
+            .schedule-card:hover,
+            .reveal.active:hover {
+                transform: none;
+            }
+
+            .map-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .directions-btn {
+                width: 100%;
+            }
+
+            .ministry-card {
+                padding: 14px;
+            }
+
+            .ministry-photos {
+                gap: 10px;
+            }
+
+            .ministry-content {
+                padding: 15px 12px 12px;
+            }
+        }
+
+        /* ---------- Phones (≤600px): contact stacks to 1 column ---------- */
+        @media (max-width: 600px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+            }
+
+            .contact-grid .contact-card:last-child {
+                grid-column: auto;
+                max-width: none;
+                justify-self: stretch;
+            }
+
+            .schedule-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .hero {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            /* Photo layout: first photo large, other two side by side */
+            .ministry-photos {
+                grid-template-columns: 1fr 1fr;
+                padding: 0;
+            }
+
+            .ministry-photos img:first-child {
+                grid-column: 1 / -1;
+                height: 200px;
+            }
+
+            .ministry-photos img {
+                height: 130px;
+            }
+
+            .mv-card {
+                border-radius: 18px;
+            }
+
+            .contact-card {
+                padding: 30px 20px;
+            }
+
+            .map-header {
+                padding: 20px;
+            }
+        }
+
+        /* ---------- Small phones (≤480px) ---------- */
+        @media (max-width: 480px) {
+
+            :root {
+                --header-h: 70px;
+            }
+
+            .logo-icon {
+                width: 44px;
+                height: 44px;
+            }
+
+            .logo {
+                gap: 10px;
+            }
+
+            .section-label {
+                font-size: 12px;
+            }
+
+            .schedule-card {
+                padding: 26px 18px;
+            }
+
+            .ministry-photos img:first-child {
+                height: 180px;
+            }
+
+            .ministry-photos img {
+                height: 115px;
+            }
+        }
+
+        /* ---------- Very small phones (≤360px) ---------- */
+        @media (max-width: 360px) {
+
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+            }
+
+            .logo {
+                gap: 8px;
+            }
+
+            .logo-text h1 {
+                font-size: 14px;
+            }
+
+            .logo-text span {
+                font-size: 10px;
+            }
+
+            .menu-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+
+            .contact-card {
+                padding: 26px 14px;
+            }
+
+            .ministry-photos img:first-child {
+                height: 160px;
+            }
+
+            .ministry-photos img {
+                height: 100px;
+            }
+        }
+
+        /* ---------- Short landscape phones ---------- */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <img src="church_logo.png" alt="New Life Baptist Church Logo">
+                </div>
+
+                <div class="logo-text">
+                    <h1>New Life Baptist Church</h1>
+                    <span>Where New Life Begins in Christ</span>
+                </div>
+            </a>
+
+            <button class="menu-btn" id="menuBtn" type="button"
+                aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#ministries">Ministries</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="small-title">WELCOME TO OUR CHURCH</div>
+
+                <h2>
+                    Where New Life
+                    <span>Begins in Christ.</span>
+                </h2>
+
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Discover Our Church</a>
+                    <a href="#contact" class="btn btn-outline">Visit Us</a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT / MISSION & VISION -->
+        <section class="about" id="about">
+
+            <div class="section-title">
+                <span class="section-label">WHO WE ARE</span>
+
+                <h2>Our Church Mission &amp; Vision</h2>
+            </div>
+
+            <div class="mission-vision">
+
+                <div class="mv-card vision-card reveal">
+                    <div class="mv-content">
+                        <h3>Our Vision</h3>
+                        <div class="mv-line"></div>
+                        <p>
+                            To see thousands of people and families whose
+                            lives are changed and transformed by the Gospel
+                            of the Lord Jesus Christ in the power of the Holy
+                            Spirit through passionate evangelism and
+                            intentional discipleship.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mv-card mission-card reveal">
+                    <div class="mv-content">
+                        <h3>Our Mission</h3>
+                        <div class="mv-line"></div>
+                        <p>
+                            To know God through His Word, to glorify God
+                            through life and service, and to share Jesus
+                            through evangelism and discipleship.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCHEDULE -->
+        <section class="schedule" id="schedule">
+
+            <div class="section-title">
+                <h2>Church Schedule</h2>
+                <p>Come worship, pray, fellowship, and grow with us.</p>
+            </div>
+
+            <div class="schedule-grid">
+
+                <div class="schedule-card reveal">
+                    <div class="day">SUNDAY</div>
+                    <h3>Sunday Service</h3>
+                    <p>10:00 AM</p>
+                </div>
+
+                <div class="schedule-card reveal">
+                    <div class="day">WEDNESDAY</div>
+                    <h3>Prayer Meeting</h3>
+                    <p>7:00 PM</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MINISTRIES -->
+        <section class="ministries" id="ministries">
+
+            <div class="section-title">
+                <h2>Our Ministries</h2>
+            </div>
+
+            <div class="ministry-grid">
+
+                <!-- DISCIPLESHIP -->
+                <div class="ministry-card reveal">
+                    <div class="ministry-photos">
+                        <img src="discipleship1.jpg" alt="Discipleship Ministry" loading="lazy">
+                        <img src="discipleship2.jpg" alt="Discipleship Ministry" loading="lazy">
+                        <img src="discipleship3.jpg" alt="Discipleship Ministry" loading="lazy">
+                    </div>
+
+                    <div class="ministry-content">
+                        <h3>Discipleship Ministry</h3>
+                        <p>
+                            Our Discipleship Ministries help believers grow deeper
+                            in their relationship with Jesus Christ through God’s Word,
+                            prayer, fellowship, and intentional discipleship.
+                            We seek to equip every believer to live out their faith,
+                            serve others, and make disciples who will continue the work of Christ.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- MUSIC -->
+                <div class="ministry-card reveal">
+                    <div class="ministry-photos">
+                        <img src="music1.jpg" alt="Music Ministry" loading="lazy">
+                        <img src="music2.jpg" alt="Music Ministry" loading="lazy">
+                        <img src="music3.jpg" alt="Music Ministry" loading="lazy">
+                    </div>
+
+                    <div class="ministry-content">
+                        <h3>Music Ministry</h3>
+                        <p>
+                            The Music Ministry is a place where musicians and
+                            singers can use their God-given talents to glorify
+                            Him through singing, playing instruments, leading
+                            congregational worship, and serving in the choir.
+                            We encourage one another to grow not only in our musical
+                            abilities but also in our knowledge of the Lord Jesus Christ
+                            and His Word. Through music and worship, we seek to honor God,
+                            encourage the church, and lead others closer to Him.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CHILDREN'S -->
+                <div class="ministry-card reveal">
+                    <div class="ministry-photos">
+                        <img src="children1.jpg" alt="Children's Ministry" loading="lazy">
+                        <img src="children2.jpg" alt="Children's Ministry" loading="lazy">
+                        <img src="children3.jpg" alt="Children's Ministry" loading="lazy">
+                    </div>
+
+                    <div class="ministry-content">
+                        <h3>Children's Ministry</h3>
+                        <p>
+                            Christ's Alpha Squad Ministry is a place
+                            where kids explore Bible stories, sing,
+                            and engage in creative activities, all while
+                            growing in their faith and learning to love
+                            God and others.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- YOUTH -->
+                <div class="ministry-card reveal">
+                    <div class="ministry-photos">
+                        <img src="youth1.jpg" alt="Youth Ministry" loading="lazy">
+                        <img src="youth2.jpg" alt="Youth Ministry" loading="lazy">
+                        <img src="youth3.jpg" alt="Youth Ministry" loading="lazy">
+                    </div>
+
+                    <div class="ministry-content">
+                        <h3>Youth Ministry</h3>
+                        <p>
+                            SIDLAC Youth Ministry, an acronym for "Shining In Darkness,
+                            Living after Christ," is a welcoming family for young people
+                            seeking connection to Christ through soul winning, growing
+                            faith in Christ through service, and joy with Christ through
+                            fellowship and youth events.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- EVANGELISM -->
+                <div class="ministry-card reveal">
+                    <div class="ministry-photos">
+                        <img src="evangelism1.jpg" alt="Evangelism Ministry" loading="lazy">
+                        <img src="evangelism2.jpg" alt="Evangelism Ministry" loading="lazy">
+                        <img src="evangelism3.jpg" alt="Evangelism Ministry" loading="lazy">
+                    </div>
+
+                    <div class="ministry-content">
+                        <h3>Evangelism Ministry</h3>
+                        <p>
+                            The Evangelism Ministry is committed to
+                            fulfilling Christ’s command in Matthew 28:19–20
+                            (KJV), “Go ye therefore, and teach all nations.”
+                            Through outreach, personal evangelism, and sharing
+                            God’s Word, we seek to lead people to Jesus Christ
+                            and help them discover the new life found in Him.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BASKETBALL -->
+                <div class="ministry-card reveal">
+                    <div class="ministry-photos">
+                        <img src="basketball1.jpg" alt="Basketball Ministry" loading="lazy">
+                        <img src="basketball2.jpg" alt="Basketball Ministry" loading="lazy">
+                        <img src="basketball3.jpg" alt="Basketball Ministry" loading="lazy">
+                    </div>
+
+                    <div class="ministry-content">
+                        <h3>Basketball Ministry</h3>
+                        <p>
+                            New Life Crossover Hoops is a ministry that
+                            provides free basketball training sessions
+                            with a goal of instilling the word of God in
+                            the lives of the next generation, the Gen A.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+
+            <div class="section-title">
+                <h2>Visit &amp; Connect</h2>
+                <p>
+                    We would love to meet you and welcome you
+                    into our church family.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- LOCATION -->
+                <div class="contact-card reveal">
+                    <div class="icon" aria-hidden="true">⌖</div>
+                    <h3>Location</h3>
+                    <p>
+                        New Life Baptist Church<br>
+                        Seabreeze Homes, Mactan<br>
+                        Lapu-Lapu City, Cebu
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=New+Life+Baptist+Church+Seabreeze+Homes+Mactan+Lapu-Lapu+City+Cebu"
+                        target="_blank" rel="noopener" class="map-link">
+                        View on Google Maps →
+                    </a>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="contact-card reveal">
+                    <div class="icon" aria-hidden="true">✉</div>
+                    <h3>Email</h3>
+                    <p>
+                        Have a question or want to connect
+                        with us?<br>Send us an email.
+                    </p>
+                    <a href="mailto:newlifebaptistchurch2017@gmail.com" class="email-link">
+                        newlifebaptistchurch2017@gmail.com
+                    </a>
+                </div>
+
+                <!-- FACEBOOK -->
+                <div class="contact-card reveal">
+                    <div class="icon" aria-hidden="true">f</div>
+                    <h3>Facebook</h3>
+                    <p>
+                        Follow us for updates<br>
+                        and service announcements.
+                    </p>
+                    <a href="https://www.facebook.com/share/14scvhNs69o/" target="_blank" rel="noopener" class="facebook-link">
+                        Visit our Facebook Page
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- GOOGLE MAP -->
+            <div class="map-container reveal">
+
+                <div class="map-header">
+
+                    <div class="map-location-info">
+                        <span class="map-icon" aria-hidden="true">⌖</span>
+                        <div>
+                            <h3>Find Us</h3>
+                            <p>New Life Baptist Church · Seabreeze Homes, Mactan</p>
+                        </div>
+                    </div>
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=New+Life+Baptist+Church+Seabreeze+Homes+Mactan+Lapu-Lapu+City+Cebu"
+                        target="_blank" rel="noopener" class="directions-btn">
+                        Get Directions
+                    </a>
+
+                </div>
+
+                <div class="map-wrapper">
+                    <iframe
+                        title="Map showing New Life Baptist Church"
+                        src="https://www.google.com/maps?q=New%20Life%20Baptist%20Church%2C%20Seabreeze%20Homes%2C%20Mactan%2C%20Lapu-Lapu%20City%2C%20Cebu&output=embed"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>New Life Baptist Church</h2>
+        <p>Where New Life Begins in Christ.</p>
+        <div class="footer-line"></div>
+        <p class="copyright">
+            © 2026 New Life Baptist Church. All Rights Reserved.
+        </p>
+    </footer>
+
+
+    <script>
+        // ----- Mobile navigation -----
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        function setMenu(open) {
+            navLinks.classList.toggle("active", open);
+            menuBtn.textContent = open ? "✕" : "☰";
+            menuBtn.setAttribute("aria-expanded", String(open));
+            menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        }
+
+        menuBtn.addEventListener("click", () => {
+            setMenu(!navLinks.classList.contains("active"));
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => setMenu(false));
+        });
+
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") setMenu(false);
+        });
+
+        // Reset menu when resizing back to desktop (matches the 960px CSS breakpoint)
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 960) setMenu(false);
+        });
+
+
+        // ----- Scroll reveal animation -----
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealElements.forEach(el => observer.observe(el));
+        } else {
+            revealElements.forEach(el => el.classList.add("active"));
+        }
+    </script>
+
+</body>
+</html>
